@@ -1,0 +1,476 @@
+/* General Styles */
+body {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #000000;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+/* Toggle Switch Styles */
+
+/* Align the text and the switch button horizontally */
+.Toggle {
+    display: flex;                /* Use flexbox to align content horizontally */
+    justify-content: flex-end;    
+    align-items: center;          
+    gap: 10px;                    
+    padding-right: 20px;          
+    position: absolute;           
+    top: 10px;                    
+    right: 0;                    
+}
+
+.Toggle p{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 60px;               /* Adjust width as needed */
+    height: 35px;
+    gap: 10px;                
+    margin-left: auto;          /* Pushes the switch to the right */
+}
+
+.switch p {
+    margin: 0;
+    padding-left: 10px;         /* Adds space between the switch and text */
+    font-weight: bold;
+}
+
+.input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+    border-radius: 30px;
+    transition: background-color 0.4s;
+    border: 2px solid #000;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Active State - Brighter Theme */
+.input:checked + .slider {
+    background-color: #ffffff; /* Light warm tone */
+}
+
+.input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: #ffffff;
+}
+
+.input:checked ~ .sun {
+    opacity: 0;
+}
+
+.input:checked ~ .moon {
+    opacity: 1;
+}
+
+/* General Light Mode Styles */
+body {
+    background-color: #f5f5f5;
+    color: #000000;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode h1 {
+    color: #ff0400;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Dark Mode with Red and Black Palette */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode .slider {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+
+body.dark-mode .slider:before {
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode a {
+    color: #ff4d4d;
+}
+
+h1.dark-mode .moon {
+    text-align: center;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+body.dark-mode header {
+    color: #ff0400;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.dark-mode #Stripe {
+    background-color: #000000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+body.dark-mode .column {
+    background-color: #313131;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+body.dark-mode #Footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+body.dark-mode #comments {
+    padding: 40px;
+    margin: 90px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 14px 20px 14px 20px rgba(0, 0, 0, 0.1);
+    background-color: #4d4d4d;
+}
+
+body.dark-mode h2 {
+    font-size: 50px;
+    color: #e6a0ff;
+    margin-bottom: 20px;
+    font-family: cursive;
+    font-weight: bolder;
+    text-align: center;
+}
+
+body.dark-mode button {
+    background-color: #ff0400;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode button:hover {
+    background-color: #790604;
+}
+
+#comment-list {
+    margin-top: 20px;
+}
+
+body.dark-mode .comment-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #dfdfdf;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark-mode .comment-item button {
+    background-color: #5e0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px; 
+}
+
+body.dark-mode .comment-item button:hover {
+    background-color: #000000;
+}
+
+
+/* Navigation Bar */
+/* Header Full Width Fix */
+header {
+    background-color: #790604;
+    color: white;
+    padding: 10px 0;
+    width: 100vw; /* Ensures it spans the entire viewport width */
+    max-width: 100%; /* Prevents unexpected shrinking */
+    box-sizing: border-box; /* Includes padding in total width calculation */
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #790604;
+    border-radius: 5px;
+}
+
+/* Opening Hours Section */
+.column {
+    background-color: #790604;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 50px;
+    width: 90%;
+    text-align: center;
+    transition: background-color 0.3s;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.column h2 {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column li {
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+/* Social Section */
+#Stripe {
+    background-color: #790604;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#Stripe a {
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+#Stripe a:hover {
+    color: #790604;
+}
+
+/* Footer */
+#Footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#Footer img{
+    transition: transform 0.3s, border-color 0.3s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Footer img:hover {
+    transform: scale(1.39);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Comment Section Styling */
+#comments {
+    padding: 40px;
+    margin: 90px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 14px 20px 14px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+h2 {
+    font-size: 50px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: cursive;
+    font-weight: bolder;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 90%;
+    border: 2px solid #790604;
+    background-color: rgba(230, 230, 230, 0.7);
+    color: #252525;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+    background-color: #790604;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+#comment-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(230, 230, 230, 0.7);
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-item button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px; 
+}
+
+.comment-item button:hover {
+    background-color: #8b0000;
+}
+
+#Design {
+    background-image: url('Foodora\ 2.jpg');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Minimum height is the full viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #Design {
+        background-size: cover; 
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    #Design {
+        background-size: contain;
+        min-height: 60vh;
+    }
+}

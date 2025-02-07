@@ -1,0 +1,444 @@
+/* General Styles */
+body {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #000000;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+/* Toggle Switch Styles */
+
+/* Align the text and the switch button horizontally */
+.Toggle {
+    display: flex;                /* Use flexbox to align content horizontally */
+    justify-content: flex-end;    
+    align-items: center;          
+    gap: 10px;                    
+    padding-right: 20px;          
+    position: absolute;           
+    top: 10px;                    
+    right: 0;                    
+}
+
+.Toggle p{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 60px;               
+    height: 35px;
+    gap: 10px;                
+    margin-left: auto;          /* Pushes the switch to the right */
+}
+
+.switch p {
+    margin: 0;
+    padding-left: 10px;         /* Adds space between the switch and text */
+    font-weight: bold;
+}
+
+.input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+    border-radius: 30px;
+    transition: background-color 0.4s;
+    border: 2px solid #000;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Active State - Brighter Theme */
+.input:checked + .slider {
+    background-color: #ffffff; /* Light warm tone */
+}
+
+.input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: #ffffff;
+}
+
+.input:checked ~ .sun {
+    opacity: 0;
+}
+
+.input:checked ~ .moon {
+    opacity: 1;
+}
+
+/* General Light Mode Styles */
+body {
+    background-color: #f5f5f5;
+    color: #000000;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode h1 {
+    color: #ff0400;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Dark Mode with Red and Black Palette */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode .slider {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+
+body.dark-mode .slider:before {
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode a {
+    color: #ff4d4d;
+}
+
+h1.dark-mode .moon {
+    text-align: center;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+body.dark-mode #Menu{
+    background-color: #3f3f3f;
+}
+body.dark-mode header {
+    color: #ff0400;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.dark-mode #Stripe {
+    background-color: #000000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+body.dark-mode .column {
+    background-color: #313131;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+body.dark-mode #Mer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    transition: background-color 0.5s;
+}
+
+body.dark-mode #Footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+body.dark-mode #Menu h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin: 40px auto 20px; /* Center margin */
+    border-bottom: 3px solid #ff6347;
+    display: block; /* Ensure it takes full width */
+    width: fit-content; /* Adjust width to content */
+    padding-bottom: 5px;
+    background-color: #3f3f3f;
+}
+
+
+/* Menu Item Containers */
+body.dark-mode .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* Individual Menu Item */
+body.dark-mode .menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.dark-mode .menu-item:hover {
+    transform: scale(1.03);
+}
+
+/* Menu Item Images */
+body.dark-mode .menu-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-right: 3px solid #ff6347;
+}
+
+/* Menu Item Text */
+body.dark-mode .menu-text {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+body.dark-mode .menu-text h3 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+body.dark-mode .menu-text p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 16px;
+}
+
+body.dark-mode .menu-text strong {
+    color: #ff6347;
+    font-size: 18px;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #790604;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #790604;
+    border-radius: 5px;
+}
+
+/* Social Section */
+#Stripe {
+    background-color: #790604;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#Stripe a {
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+#Stripe a:hover {
+    color: #790604;
+}
+
+/* Footer */
+#Footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#Footer img{
+    transition: transform 0.3s, border-color 0.3s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Footer img:hover {
+    transform: scale(1.39);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+/* Menu Section Styling */
+#Menu {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Section Headings */
+
+#Menu h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin: 40px auto 20px; /* Center margin */
+    border-bottom: 3px solid #ff6347;
+    display: block; /* Ensure it takes full width */
+    width: fit-content; /* Adjust width to content */
+    padding-bottom: 5px;
+}
+
+
+/* Menu Item Containers */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* Individual Menu Item */
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.03);
+}
+
+/* Menu Item Images */
+.menu-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-right: 3px solid #ff6347;
+}
+
+/* Menu Item Text */
+.menu-text {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.menu-text h3 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.menu-text p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 16px;
+}
+
+.menu-text strong {
+    color: #ff6347;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-item img {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 3px solid #ff6347;
+    }
+}

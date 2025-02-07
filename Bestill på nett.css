@@ -1,0 +1,386 @@
+/* General Styles */
+body {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #000000;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+/* Toggle Switch Styles */
+
+/* Align the text and the switch button horizontally */
+.Toggle {
+    display: flex;                /* Use flexbox to align content horizontally */
+    justify-content: flex-end;    
+    align-items: center;          
+    gap: 10px;                    
+    padding-right: 20px;          
+    position: absolute;           
+    top: 10px;                    
+    right: 0;                    
+}
+
+.Toggle p{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 60px;               /* Adjust width as needed */
+    height: 35px;
+    gap: 10px;                
+    margin-left: auto;          /* Pushes the switch to the right */
+}
+
+.switch p {
+    margin: 0;
+    padding-left: 10px;         /* Adds space between the switch and text */
+    font-weight: bold;
+}
+
+.input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+    border-radius: 30px;
+    transition: background-color 0.4s;
+    border: 2px solid #000;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Active State - Brighter Theme */
+.input:checked + .slider {
+    background-color: #ffffff; /* Light warm tone */
+}
+
+.input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: #ffffff;
+}
+
+.input:checked ~ .sun {
+    opacity: 0;
+}
+
+.input:checked ~ .moon {
+    opacity: 1;
+}
+
+/* General Light Mode Styles */
+body {
+    background-color: #f5f5f5;
+    color: #000000;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode h1 {
+    color: #ff0400;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Dark Mode with Red and Black Palette */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark-mode .slider {
+    background-color: #000000;
+    border: 2px solid #000000;
+}
+
+body.dark-mode .slider:before {
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode a {
+    color: #ff4d4d;
+}
+
+h1.dark-mode .moon {
+    text-align: center;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+    font-size: 100px;
+    font-family: cursive;
+}
+
+body.dark-mode header {
+    color: #ff0400;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.dark-mode #Stripe {
+    background-color: #000000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+body.dark-mode .column {
+    background-color: #313131;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+body.dark-mode #Footer {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #790604;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #790604;
+    border-radius: 5px;
+}
+
+/* Social Section */
+#Stripe {
+    background-color: #790604;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#Stripe a {
+    margin: 0 10px;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+#Stripe a:hover {
+    color: #790604;
+}
+
+/* Footer */
+#Footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#Footer img{
+    transition: transform 0.3s, border-color 0.3s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Footer img:hover {
+    transform: scale(1.39);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Style the paragraph */
+#p2 p {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px;
+    color: #000;
+}
+
+/* Style the buttons */
+button.Foodora {
+    background-color: #d60665; 
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on buttons */
+button.Foodora:hover {
+    background-color: #b50051; 
+    transform: scale(1.05); 
+}
+
+/* Style the images inside buttons */
+button.Foodora img {
+    vertical-align: middle; 
+}
+
+
+/* Style the buttons */
+button.Wolt {
+    background-color: #00bfe5; 
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add space between text and image */
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on buttons */
+button.Wolt:hover {
+    background-color: #00839d; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Style the images inside buttons */
+button.Wolt img {
+    vertical-align: middle; /* Align the image vertically with text */
+}
+/* Optional: Add a container for better layout */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+#Bestill {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Adds space between the buttons */
+    margin-top: 20px; /* Optional: adds space above the buttons */
+}
+
+#Design {
+    background-image: url('Background.webp');
+    background-size: cover; /* Ensures full coverage */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #Design {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #Design {
+        background-size: contain; /* Ensures image remains fully visible */
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 480px) {
+    #Design {
+        background-size: contain;
+        background-position: center;
+        min-height: 60vh;
+    }
+}
